@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ride Registration</title>
+    <link rel="stylesheet" href="rider-map-styles.css">
+    <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Register Your Ride</h2>
+        <form id="riderForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <label for="carSearch">Car:</label>
+            <input type="text" id="carSearch" placeholder="Search car model..." required>
+            <div id="carDropdown" class="dropdown"></div>
+            <button type="button" id="addCarBtn" style="display:none;">Add New Car</button>
+            <div id="newCarFields" style="display:none;">
+                <input type="text" id="carMake" placeholder="Car Make">
+                <input type="number" id="carMileage" placeholder="Mileage (km/l)">
+            </div>
+
+            <label for="from">From:</label>
+            <input type="text" id="from" placeholder="Enter pickup location" required>
+            <div id="fromSuggestions" class="dropdown"></div>
+
+            <label for="to">To:</label>
+            <input type="text" id="to" placeholder="Enter destination" required>
+            <div id="toSuggestions" class="dropdown"></div>
+
+            <label for="time">Time:</label>
+            <input type="time" id="time" required>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    
+    <script type="module" src="rider_map.js"></script>
+</body>
+</html>
